@@ -413,18 +413,22 @@ function Index() {
               Three steps, zero heavy lifting on your end.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3 items-stretch">
             {steps.map(({ n, t, d, icon }) => (
-              <div key={n} className="relative rounded-lg border border-border bg-card p-8">
-                <div className="flex items-center gap-4">
+              <div
+                key={n}
+                className="relative flex h-full flex-col items-center rounded-lg border border-border bg-card p-8 text-center"
+              >
+                <div className="flex h-20 items-center justify-center gap-4">
                   <StepIcon kind={icon} />
-                  <span className="font-display text-5xl text-primary/25">{n}</span>
+                  <span className="font-display text-5xl leading-none text-primary/25">{n}</span>
                 </div>
                 <h3 className="mt-4 text-2xl">{t}</h3>
                 <p className="mt-3 text-muted-foreground">{d}</p>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
