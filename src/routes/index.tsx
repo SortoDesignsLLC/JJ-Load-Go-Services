@@ -252,6 +252,7 @@ function Index() {
     ["Services", "#services"],
     ["How It Works", "#how"],
     ["Pricing", "#pricing"],
+    ["Service Area", "#areas"],
     ["Reviews", "#reviews"],
     ["About", "#about"],
     ["Quote", "#quote"],
