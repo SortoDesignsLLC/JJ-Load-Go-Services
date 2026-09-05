@@ -120,6 +120,49 @@ function CallButton({ className = "" }: { className?: string }) {
   );
 }
 
+function TrailerLoad({ pct, label }: { pct: number; label: string }) {
+  // trailer interior: x 118→214, floor y 72, ceiling y 30
+  const floor = 72;
+  const maxH = 42;
+  const h = (maxH * pct) / 100;
+  const y = floor - h;
+  return (
+    <svg
+      viewBox="0 0 224 92"
+      className="mx-auto w-full max-w-[13rem]"
+      role="img"
+      aria-label={`Pickup truck with a small trailer filled to a ${label}`}
+    >
+      <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round">
+        {/* pickup truck: cab + bed, facing left */}
+        <path d="M6 72 V56 L18 40 H40 V56 H6" className="text-foreground/80" />
+        <path d="M40 72 V44 H62 V72" className="text-foreground/80" />
+        <path d="M62 62 H104" className="text-foreground/80" />
+        <path d="M104 62 V68" className="text-foreground/80" />
+        {/* hitch */}
+        <path d="M104 68 H118" className="text-foreground/40" />
+        {/* trailer box */}
+        <path d="M118 72 V30 H214 V72 Z" className="text-foreground/80" />
+      </g>
+      {/* load fill */}
+      <rect x="120" y={y} width="92" height={h} rx="1.5" fill="var(--color-primary)" opacity="0.9" />
+      {/* wheels */}
+      <g fill="currentColor" className="text-foreground/80">
+        <circle cx="24" cy="76" r="8" />
+        <circle cx="86" cy="76" r="8" />
+        <circle cx="166" cy="78" r="7" />
+      </g>
+      <g fill="var(--color-card)">
+        <circle cx="24" cy="76" r="3" />
+        <circle cx="86" cy="76" r="3" />
+        <circle cx="166" cy="78" r="2.5" />
+      </g>
+      {/* ground */}
+      <path d="M2 86 H222" stroke="currentColor" strokeWidth="2" className="text-border" />
+    </svg>
+  );
+}
+
 function Index() {
   const [open, setOpen] = useState(false);
   const nav = [
@@ -373,18 +416,8 @@ function Index() {
                 { size: "Full Load", price: "$475 – $699", ex: "Whole-home clean out" },
               ].map((l, i) => (
                 <div key={l.size} className="bg-card p-7 text-center">
-                  <div
-                    className="mx-auto flex h-14 w-full max-w-[9rem] items-end overflow-hidden rounded border border-border"
-                    aria-hidden="true"
-                  >
-                    <span
-                      className="h-full"
-                      style={{
-                        width: `${[12.5, 25, 50, 100][i]}%`,
-                        background: "var(--gradient-red)",
-                      }}
-                    />
-                  </div>
+                  <TrailerLoad pct={[12.5, 25, 50, 100][i] ?? 100} label={l.size} />
+
                   <p className="mt-4 font-display text-xl">{l.size}</p>
                   <p className="mt-1 font-display text-2xl text-primary">{l.price}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{l.ex}</p>
