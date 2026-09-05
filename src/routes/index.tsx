@@ -17,7 +17,33 @@ import {
   X,
   ArrowRight,
   Handshake,
+  MapPin,
 } from "lucide-react";
+import { lazy } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+
+const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
+
+const serviceAreas = [
+  "Fairfax County",
+  "Loudoun County",
+  "Prince William County",
+  "Arlington",
+  "Alexandria",
+  "Manassas",
+  "Woodbridge",
+  "Centreville",
+  "Chantilly",
+  "Sterling",
+  "Ashburn",
+  "Herndon",
+  "Reston",
+  "Vienna",
+  "Springfield",
+  "Burke",
+  "Annandale",
+  "Dale City",
+];
 
 import logo from "@/assets/jj-logo.png.asset.json";
 import heroImg from "@/assets/hero.jpg";
@@ -252,6 +278,7 @@ function Index() {
     ["Services", "#services"],
     ["How It Works", "#how"],
     ["Pricing", "#pricing"],
+    ["Service Area", "#areas"],
     ["Reviews", "#reviews"],
     ["About", "#about"],
     ["Quote", "#quote"],
@@ -572,6 +599,52 @@ function Index() {
               loading="lazy"
               className="mx-auto w-full max-w-md rounded-lg border border-border logo-chip bg-ink p-3 shadow-[var(--shadow-lift)]"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Service area */}
+      <section id="areas" className="section-pad border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="max-w-2xl rule-red">
+            <h2 className="text-4xl md:text-5xl">Where we haul</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We serve all of Northern Virginia. The shaded green area on the map is our everyday
+              service zone — if you're just outside of it, call us anyway and we'll do our best.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+              <ClientOnly
+                fallback={
+                  <div className="h-[320px] w-full animate-pulse bg-surface sm:h-[420px] lg:h-[480px]" />
+                }
+              >
+                <ServiceAreaMap />
+              </ClientOnly>
+            </div>
+
+            <div className="rounded-xl border border-border bg-card p-8">
+              <div className="flex items-center gap-2 text-primary">
+                <MapPin className="h-5 w-5" />
+                <span className="font-display text-xl">Cities & counties we cover</span>
+              </div>
+              <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-foreground/90">
+                {serviceAreas.map((a) => (
+                  <li key={a} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    {a}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={TEL}
+                className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 font-display text-lg text-primary-foreground transition hover:opacity-90"
+              >
+                <Phone className="h-5 w-5" /> Call {PHONE}
+              </a>
+            </div>
           </div>
         </div>
       </section>
