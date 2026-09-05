@@ -125,6 +125,7 @@ function Index() {
   const nav = [
     ["Services", "#services"],
     ["How It Works", "#how"],
+    ["Pricing", "#pricing"],
     ["Reviews", "#reviews"],
     ["About", "#about"],
     ["Quote", "#quote"],
