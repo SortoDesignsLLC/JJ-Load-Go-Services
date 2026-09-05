@@ -579,18 +579,24 @@ function Index() {
               dropped off instead of dumped. That's how we've built a customer list that keeps
               calling us back.
             </p>
-            <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6">
+            <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {[
-                ["1,200+", "Loads hauled"],
-                ["Same day", "Typical response"],
-                ["5★", "Neighbor rated"],
-              ].map(([k, v]) => (
-                <div key={v}>
-                  <dt className="font-display text-3xl text-primary">{k}</dt>
-                  <dd className="text-sm text-muted-foreground">{v}</dd>
+                { icon: Truck, k: "1,000+", v: "Tons of trash hauled" },
+                { icon: CheckCircle2, k: "1,200+", v: "Loads hauled" },
+                { icon: Clock, k: "Same day", v: "Typical response" },
+                { icon: Star, k: "5★", v: "Neighbor rated" },
+              ].map(({ icon: Icon, k, v }) => (
+                <div
+                  key={v}
+                  className="flex flex-col items-center rounded-xl border border-border bg-card p-4 text-center shadow-sm"
+                >
+                  <Icon className="h-6 w-6 text-primary" />
+                  <dt className="mt-2 font-display text-2xl leading-tight text-primary">{k}</dt>
+                  <dd className="mt-1 text-xs text-muted-foreground">{v}</dd>
                 </div>
               ))}
             </dl>
+
           </div>
           <div className="relative">
             <img
