@@ -32,9 +32,9 @@ export default function ServiceAreaMap() {
         attributionControl: true,
       });
 
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution: "&copy; OpenStreetMap &copy; CARTO",
-        maxZoom: 18,
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 19,
       }).addTo(map);
 
       const area = L.polygon(AREA, {
