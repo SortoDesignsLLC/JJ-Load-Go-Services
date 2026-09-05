@@ -133,29 +133,43 @@ function TrailerLoad({ pct, label }: { pct: number; label: string }) {
       role="img"
       aria-label={`Pickup truck with a small trailer filled to a ${label}`}
     >
-      <g fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round">
-        {/* pickup truck: cab + bed, facing left */}
-        <path d="M6 72 V56 L18 40 H40 V56 H6" className="text-foreground/80" />
-        <path d="M40 72 V44 H62 V72" className="text-foreground/80" />
-        <path d="M62 62 H104" className="text-foreground/80" />
-        <path d="M104 62 V68" className="text-foreground/80" />
-        {/* hitch */}
-        <path d="M104 68 H118" className="text-foreground/40" />
-        {/* trailer box */}
-        <path d="M118 72 V30 H214 V72 Z" className="text-foreground/80" />
-      </g>
+      {/* pickup truck body, facing left */}
+      <path
+        d="M6 70 V56 Q6 53 9 52.5 L28 50 L39 36 H60 V50 H106 V70 Z"
+        fill="currentColor"
+        className="text-foreground/85"
+      />
+      {/* cab windows */}
+      <path d="M34 49 L43 39 H56 V49 Z" fill="var(--color-card)" />
+      {/* bed rail highlight */}
+      <path d="M60 54 H106" stroke="var(--color-card)" strokeWidth="2" opacity="0.5" />
+      {/* hitch */}
+      <path d="M106 66 H118" stroke="currentColor" strokeWidth="3" className="text-foreground/50" />
+
+      {/* trailer box */}
+      <path
+        d="M118 72 V30 H214 V72 Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinejoin="round"
+        className="text-foreground/85"
+      />
       {/* load fill */}
       <rect x="120" y={y} width="92" height={h} rx="1.5" fill="var(--color-primary)" opacity="0.9" />
+      {/* trailer fender */}
+      <path d="M154 74 h24" stroke="currentColor" strokeWidth="3" className="text-foreground/85" />
+
       {/* wheels */}
-      <g fill="currentColor" className="text-foreground/80">
-        <circle cx="24" cy="76" r="8" />
-        <circle cx="86" cy="76" r="8" />
-        <circle cx="166" cy="78" r="7" />
+      <g fill="currentColor" className="text-foreground/85">
+        <circle cx="24" cy="72" r="10" />
+        <circle cx="88" cy="72" r="10" />
+        <circle cx="166" cy="76" r="8" />
       </g>
       <g fill="var(--color-card)">
-        <circle cx="24" cy="76" r="3" />
-        <circle cx="86" cy="76" r="3" />
-        <circle cx="166" cy="78" r="2.5" />
+        <circle cx="24" cy="72" r="3.5" />
+        <circle cx="88" cy="72" r="3.5" />
+        <circle cx="166" cy="76" r="3" />
       </g>
       {/* ground */}
       <path d="M2 86 H222" stroke="currentColor" strokeWidth="2" className="text-border" />
