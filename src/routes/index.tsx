@@ -143,7 +143,12 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 lg:px-8">
           <a href="#top" className="flex min-w-0 items-center gap-3">
-            <img src={logo.url} alt="JJ Load & Go Services logo" className="h-12 w-auto shrink-0 sm:h-14" />
+            <img
+              src={logo.url}
+              alt="JJ Load & Go Services logo"
+              className="logo-chip h-12 w-auto shrink-0 p-1 sm:h-14"
+            />
+
             <span className="min-w-0 truncate font-display text-lg leading-tight sm:text-xl">
               JJ Load &amp; Go <span className="text-primary">Services</span>
             </span>
