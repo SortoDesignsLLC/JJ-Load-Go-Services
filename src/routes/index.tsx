@@ -316,6 +316,8 @@ function Index() {
           width={1600}
           height={1104}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
+          style={{ filter: "brightness(1.12) contrast(1.03)" }}
+
         />
         <div
           className="absolute inset-0 -z-10"
