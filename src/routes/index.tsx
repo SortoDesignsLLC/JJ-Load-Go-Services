@@ -373,18 +373,8 @@ function Index() {
                 { size: "Full Load", price: "$475 – $699", ex: "Whole-home clean out" },
               ].map((l, i) => (
                 <div key={l.size} className="bg-card p-7 text-center">
-                  <div
-                    className="mx-auto flex h-14 w-full max-w-[9rem] items-end overflow-hidden rounded border border-border"
-                    aria-hidden="true"
-                  >
-                    <span
-                      className="h-full"
-                      style={{
-                        width: `${[12.5, 25, 50, 100][i]}%`,
-                        background: "var(--gradient-red)",
-                      }}
-                    />
-                  </div>
+                  <TrailerLoad pct={[12.5, 25, 50, 100][i]} label={l.size} />
+
                   <p className="mt-4 font-display text-xl">{l.size}</p>
                   <p className="mt-1 font-display text-2xl text-primary">{l.price}</p>
                   <p className="mt-2 text-sm text-muted-foreground">{l.ex}</p>
