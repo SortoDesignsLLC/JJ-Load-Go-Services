@@ -21,7 +21,8 @@ import {
 
 import logo from "@/assets/jj-logo.png.asset.json";
 import heroImg from "@/assets/hero.jpg";
-import svcJunk from "@/assets/svc-junk.jpg";
+import svcJunkAsset from "@/assets/svc-junk.jpg.asset.json";
+const svcJunk = svcJunkAsset.url;
 import svcCleanout from "@/assets/svc-cleanout.jpg";
 import svcDebris from "@/assets/svc-debris.jpg";
 import svcDemo from "@/assets/svc-demo.jpg";
@@ -56,7 +57,7 @@ const services = [
     icon: Truck,
     title: "Junk Removal",
     img: svcJunk,
-    alt: "Crew loading boxes into a red pickup truck and trailer in a driveway",
+    alt: "JJ Load & Go red pickup truck towing a loaded utility trailer in a driveway",
     body: "Single items or a full truckload. We lift, load and haul it away — you never touch a thing.",
   },
   {
