@@ -125,6 +125,7 @@ function Index() {
   const nav = [
     ["Services", "#services"],
     ["How It Works", "#how"],
+    ["Pricing", "#pricing"],
     ["Reviews", "#reviews"],
     ["About", "#about"],
     ["Quote", "#quote"],
@@ -143,7 +144,12 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 lg:px-8">
           <a href="#top" className="flex min-w-0 items-center gap-3">
-            <img src={logo.url} alt="JJ Load & Go Services logo" className="h-12 w-auto shrink-0 sm:h-14" />
+            <img
+              src={logo.url}
+              alt="JJ Load & Go Services logo"
+              className="logo-chip h-12 w-auto shrink-0 p-1 sm:h-14"
+            />
+
             <span className="min-w-0 truncate font-display text-lg leading-tight sm:text-xl">
               JJ Load &amp; Go <span className="text-primary">Services</span>
             </span>
@@ -210,8 +216,8 @@ function Index() {
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-4 py-24 md:py-36 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="mb-4 inline-block border border-primary/60 bg-primary/15 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-foreground">
+          <div className="on-dark max-w-2xl">
+            <p className="mb-4 inline-block border border-primary/60 bg-primary/25 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-steel">
               Reliable · Professional · Family Owned
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl">
@@ -226,9 +232,10 @@ function Index() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CallButton />
               <a
-                href="#quote"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background/60 px-6 py-3.5 font-display text-lg tracking-wide transition hover:bg-secondary"
+                href="#pricing"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-steel/40 bg-ink/50 px-6 py-3.5 font-display text-lg tracking-wide text-steel transition hover:bg-ink/80"
               >
+
                 Get a free quote <ArrowRight className="h-5 w-5" />
               </a>
             </div>
@@ -311,6 +318,89 @@ function Index() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section id="pricing" className="section-pad">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-4xl md:text-5xl">How pricing works</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We price by how much space your stuff takes up in the trailer. You get a firm number
+              before we lift a finger — no hourly surprises, no hidden dump fees.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-10 text-center md:grid-cols-3">
+            {[
+              {
+                icon: Truck,
+                t: "Priced by the load",
+                d: "We quote on truck space, not the clock. An eighth, a quarter, a half or a full trailer — you only pay for the room your items take.",
+              },
+              {
+                icon: Sofa,
+                t: "What affects the cost",
+                d: "Item type, weight, and how hard it is to reach. Upstairs, tight basements, heavy materials and disposal fees can move the number.",
+              },
+              {
+                icon: CheckCircle2,
+                t: "Free, no-pressure quote",
+                d: "Text a photo for a ballpark, or we confirm the exact price on site. If it isn't right for you, we leave — no charge.",
+              },
+            ].map(({ icon: Icon, t, d }) => (
+              <div key={t} className="flex flex-col items-center">
+                <span className="grid h-16 w-16 place-items-center rounded-full bg-primary/10">
+                  <Icon className="h-8 w-8 text-primary" />
+                </span>
+                <h3 className="mt-5 text-2xl">{t}</h3>
+                <p className="mt-3 text-muted-foreground">{d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 overflow-hidden rounded-xl border border-border bg-surface shadow-[var(--shadow-lift)]">
+            <div className="border-b border-border px-6 py-5 text-center md:px-10">
+              <h3 className="text-2xl">Typical load sizes</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ballpark ranges for the Northern Virginia area. Your exact price is confirmed on
+                site before work begins.
+              </p>
+            </div>
+            <div className="grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
+              {[
+                { size: "1/8 Load", price: "$99 – $175", ex: "One appliance, a few boxes" },
+                { size: "1/4 Load", price: "$175 – $299", ex: "Couch or mattress set" },
+                { size: "1/2 Load", price: "$299 – $475", ex: "Garage or small basement" },
+                { size: "Full Load", price: "$475 – $699", ex: "Whole-home clean out" },
+              ].map((l, i) => (
+                <div key={l.size} className="bg-card p-7 text-center">
+                  <div
+                    className="mx-auto flex h-14 w-full max-w-[9rem] items-end overflow-hidden rounded border border-border"
+                    aria-hidden="true"
+                  >
+                    <span
+                      className="h-full"
+                      style={{
+                        width: `${[12.5, 25, 50, 100][i]}%`,
+                        background: "var(--gradient-red)",
+                      }}
+                    />
+                  </div>
+                  <p className="mt-4 font-display text-xl">{l.size}</p>
+                  <p className="mt-1 font-display text-2xl text-primary">{l.price}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{l.ex}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col items-center gap-3 border-t border-border px-6 py-7 text-center sm:flex-row sm:justify-center">
+              <p className="font-semibold">Not sure which size you need?</p>
+              <CallButton className="text-base" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* About */}
       <section id="about" className="section-pad">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
@@ -344,7 +434,7 @@ function Index() {
               src={logo.url}
               alt="JJ Load & Go Services — junk removal, property clean out, debris removal, small demolition"
               loading="lazy"
-              className="mx-auto w-full max-w-md rounded-lg border border-border bg-black shadow-[var(--shadow-lift)]"
+              className="mx-auto w-full max-w-md rounded-lg border border-border logo-chip bg-ink p-3 shadow-[var(--shadow-lift)]"
             />
           </div>
         </div>
@@ -411,7 +501,7 @@ function Index() {
       <footer className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 md:grid-cols-3 lg:px-8">
           <div>
-            <img src={logo.url} alt="JJ Load & Go Services" loading="lazy" className="h-20 w-auto" />
+            <img src={logo.url} alt="JJ Load & Go Services" loading="lazy" className="logo-chip h-20 w-auto p-1" />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Junk removal, clean outs, debris hauling and small demolition. Reliable. Professional.
               Family owned.

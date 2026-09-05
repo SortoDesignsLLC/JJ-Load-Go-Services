@@ -46,43 +46,47 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-steel: var(--steel);
+  --color-ink: var(--ink);
   --color-surface: var(--surface);
 }
 
+
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.145 0.006 264);
-  --foreground: oklch(0.97 0.002 264);
-  --surface: oklch(0.196 0.008 264);
-  --card: oklch(0.215 0.009 264);
-  --card-foreground: oklch(0.97 0.002 264);
-  --popover: oklch(0.215 0.009 264);
-  --popover-foreground: oklch(0.97 0.002 264);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.19 0.008 264);
+  --surface: oklch(0.972 0.003 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.008 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.008 264);
   --primary: oklch(0.552 0.216 27.5);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.27 0.008 264);
-  --secondary-foreground: oklch(0.97 0.002 264);
-  --muted: oklch(0.27 0.008 264);
-  --muted-foreground: oklch(0.73 0.012 264);
+  --secondary: oklch(0.955 0.004 264);
+  --secondary-foreground: oklch(0.19 0.008 264);
+  --muted: oklch(0.955 0.004 264);
+  --muted-foreground: oklch(0.48 0.012 264);
   --accent: oklch(0.62 0.21 28);
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 16%);
+  --border: oklch(0.19 0.008 264 / 12%);
+  --input: oklch(0.19 0.008 264 / 16%);
   --ring: oklch(0.552 0.216 27.5);
-  --steel: oklch(0.82 0.006 264);
+  --steel: oklch(0.93 0.004 264);
+  --ink: oklch(0.16 0.008 264);
 
   --gradient-hero: linear-gradient(
     100deg,
-    oklch(0.145 0.006 264 / 0.96) 0%,
-    oklch(0.145 0.006 264 / 0.82) 42%,
-    oklch(0.145 0.006 264 / 0.35) 100%
+    oklch(0.16 0.008 264 / 0.94) 0%,
+    oklch(0.16 0.008 264 / 0.78) 45%,
+    oklch(0.16 0.008 264 / 0.3) 100%
   );
   --gradient-red: linear-gradient(135deg, oklch(0.62 0.21 28), oklch(0.48 0.2 27));
-  --shadow-lift: 0 24px 60px -24px oklch(0 0 0 / 0.8);
-  --shadow-red: 0 18px 44px -18px oklch(0.552 0.216 27.5 / 0.65);
+  --shadow-lift: 0 24px 60px -28px oklch(0.19 0.008 264 / 0.28);
+  --shadow-red: 0 18px 44px -18px oklch(0.552 0.216 27.5 / 0.45);
 }
+
 
 @layer base {
   * {
@@ -124,3 +128,19 @@
   }
 }
 
+
+@utility on-dark {
+  color: var(--steel);
+  & h1,
+  & h2,
+  & h3,
+  & .font-display {
+    color: oklch(1 0 0);
+  }
+}
+
+@utility logo-chip {
+  background: var(--ink);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  border-radius: var(--radius);
+}
