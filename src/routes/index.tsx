@@ -433,7 +433,7 @@ function Index() {
               src={logo.url}
               alt="JJ Load & Go Services — junk removal, property clean out, debris removal, small demolition"
               loading="lazy"
-              className="mx-auto w-full max-w-md rounded-lg border border-border bg-black shadow-[var(--shadow-lift)]"
+              className="mx-auto w-full max-w-md rounded-lg border border-border logo-chip bg-ink p-3 shadow-[var(--shadow-lift)]"
             />
           </div>
         </div>
@@ -500,7 +500,7 @@ function Index() {
       <footer className="border-t border-border bg-surface">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-14 md:grid-cols-3 lg:px-8">
           <div>
-            <img src={logo.url} alt="JJ Load & Go Services" loading="lazy" className="h-20 w-auto" />
+            <img src={logo.url} alt="JJ Load & Go Services" loading="lazy" className="logo-chip h-20 w-auto p-1" />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Junk removal, clean outs, debris hauling and small demolition. Reliable. Professional.
               Family owned.
