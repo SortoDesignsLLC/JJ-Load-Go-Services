@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
-@import "tw-animate-css";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 

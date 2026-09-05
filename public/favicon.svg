@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>JJ Load &amp; Go hauling truck</title>
+  <rect width="64" height="64" rx="15" fill="#151619"/>
+  <path d="M9 25h24v15H9z" fill="#dc2626"/>
+  <path d="M35 27h10l10 11v8H35z" fill="#fff"/>
+  <path d="M39 31h4l6 7H39z" fill="#151619"/>
+  <path d="M9 41h25v5H9z" fill="#fff"/>
+  <path d="M12 21h18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="19" cy="47" r="6" fill="#151619"/>
+  <circle cx="46" cy="47" r="6" fill="#151619"/>
+  <circle cx="19" cy="47" r="3" fill="#fff"/>
+  <circle cx="46" cy="47" r="3" fill="#fff"/>
+</svg>
