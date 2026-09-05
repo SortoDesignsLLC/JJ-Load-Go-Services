@@ -21,6 +21,12 @@ import {
 
 import logo from "@/assets/jj-logo.png.asset.json";
 import heroImg from "@/assets/hero.jpg";
+import svcJunk from "@/assets/svc-junk.jpg";
+import svcCleanout from "@/assets/svc-cleanout.jpg";
+import svcDebris from "@/assets/svc-debris.jpg";
+import svcDemo from "@/assets/svc-demo.jpg";
+import svcFurniture from "@/assets/svc-furniture.jpg";
+import svcYard from "@/assets/svc-yard.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,31 +55,43 @@ const services = [
   {
     icon: Truck,
     title: "Junk Removal",
+    img: svcJunk,
+    alt: "Crew loading boxes into a red pickup truck and trailer in a driveway",
     body: "Single items or a full truckload. We lift, load and haul it away — you never touch a thing.",
   },
   {
     icon: Home,
     title: "Property Clean Outs",
+    img: svcCleanout,
+    alt: "Garage being cleared of boxes and clutter",
     body: "Estates, rentals, foreclosures, basements and garages emptied and swept clean.",
   },
   {
     icon: Trash2,
     title: "Debris Removal",
+    img: svcDebris,
+    alt: "Pile of drywall and lumber debris being hauled away",
     body: "Construction debris, drywall, lumber and remodel leftovers cleared from your site.",
   },
   {
     icon: Hammer,
     title: "Small Demolition",
+    img: svcDemo,
+    alt: "Worker tearing down a small backyard shed",
     body: "Sheds, decks, fences and interior tear-outs — demoed and hauled in one visit.",
   },
   {
     icon: Sofa,
     title: "Furniture & Appliances",
+    img: svcFurniture,
+    alt: "Two movers carrying a couch and mattress out of a house",
     body: "Couches, mattresses, refrigerators and hot tubs removed from any floor of the home.",
   },
   {
     icon: TreePine,
     title: "Yard Waste Hauling",
+    img: svcYard,
+    alt: "Branches and brush loaded for yard waste removal",
     body: "Branches, brush, soil, fencing and storm cleanup loaded and disposed of responsibly.",
   },
 ];
@@ -388,18 +406,28 @@ function Index() {
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map(({ icon: Icon, title, body }) => (
+            {services.map(({ icon: Icon, title, body, img, alt }) => (
               <article
                 key={title}
-                className="group relative overflow-hidden rounded-lg border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-[var(--shadow-lift)]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card transition hover:-translate-y-1 hover:border-primary/50 hover:shadow-[var(--shadow-lift)]"
               >
-                <span
-                  className="absolute inset-x-0 top-0 h-1 scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
-                  style={{ background: "var(--gradient-red)" }}
-                />
-                <Icon className="h-9 w-9 text-primary" />
-                <h3 className="mt-5 text-2xl">{title}</h3>
-                <p className="mt-3 text-muted-foreground">{body}</p>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={img}
+                    alt={alt}
+                    width={1024}
+                    height={768}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute bottom-3 left-3 grid h-11 w-11 place-items-center rounded-full bg-card shadow-[var(--shadow-lift)]">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <h3 className="text-2xl">{title}</h3>
+                  <p className="mt-3 text-muted-foreground">{body}</p>
+                </div>
               </article>
             ))}
           </div>
