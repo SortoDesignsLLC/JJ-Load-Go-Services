@@ -416,7 +416,7 @@ function Index() {
                 { size: "Full Load", price: "$475 – $699", ex: "Whole-home clean out" },
               ].map((l, i) => (
                 <div key={l.size} className="bg-card p-7 text-center">
-                  <TrailerLoad pct={[12.5, 25, 50, 100][i]} label={l.size} />
+                  <TrailerLoad pct={[12.5, 25, 50, 100][i] ?? 100} label={l.size} />
 
                   <p className="mt-4 font-display text-xl">{l.size}</p>
                   <p className="mt-1 font-display text-2xl text-primary">{l.price}</p>
