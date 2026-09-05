@@ -16,6 +16,7 @@ import {
   Menu,
   X,
   ArrowRight,
+  Handshake,
 } from "lucide-react";
 
 import logo from "@/assets/jj-logo.png.asset.json";
@@ -78,9 +79,24 @@ const services = [
 ];
 
 const steps = [
-  { n: "01", t: "Call or Text", d: "Tell us what you need gone. Photos help us quote faster." },
-  { n: "02", t: "Free Upfront Price", d: "We confirm the price on site before any work starts." },
-  { n: "03", t: "We Load & Go", d: "Crew loads everything, sweeps up and hauls it away same day." },
+  {
+    n: "01",
+    t: "Call or Text",
+    d: "Tell us what you need gone. Photos help us quote faster.",
+    icon: "phone" as const,
+  },
+  {
+    n: "02",
+    t: "Free Upfront Price",
+    d: "We confirm the price on site before any work starts.",
+    icon: "handshake" as const,
+  },
+  {
+    n: "03",
+    t: "We Load & Go",
+    d: "Crew loads everything, sweeps up and hauls it away same day.",
+    icon: "rig" as const,
+  },
 ];
 
 const testimonials = [
@@ -117,6 +133,40 @@ function CallButton({ className = "" }: { className?: string }) {
       <Phone className="h-5 w-5 shrink-0" />
       {PHONE}
     </a>
+  );
+}
+
+function PickupRigIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 96 44" className={className} fill="none" aria-hidden="true">
+      <g stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round">
+        {/* pickup */}
+        <path d="M3 30 V20 L7 19 L14 10 H26 V19 H45 V30" />
+        <path d="M45 25 H51" />
+        {/* trailer */}
+        <path d="M51 30 V13 H91 V30 Z" />
+      </g>
+      <g fill="currentColor">
+        <circle cx="14" cy="32" r="5" />
+        <circle cx="38" cy="32" r="5" />
+        <circle cx="70" cy="33" r="4.5" />
+      </g>
+    </svg>
+  );
+}
+
+function StepIcon({ kind }: { kind: "phone" | "handshake" | "rig" }) {
+  return (
+    <span className="grid h-14 w-14 place-items-center rounded-full bg-primary/10 text-primary">
+      {kind === "phone" && <Phone className="h-7 w-7" />}
+      {kind === "handshake" && (
+        <span className="relative grid place-items-center">
+          <Handshake className="h-7 w-7" />
+          <CheckCircle2 className="absolute -right-2.5 -bottom-2 h-4 w-4 fill-card" />
+        </span>
+      )}
+      {kind === "rig" && <PickupRigIcon className="h-8 w-8" />}
+    </span>
   );
 }
 
@@ -364,10 +414,13 @@ function Index() {
             </p>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {steps.map(({ n, t, d }) => (
+            {steps.map(({ n, t, d, icon }) => (
               <div key={n} className="relative rounded-lg border border-border bg-card p-8">
-                <span className="font-display text-6xl text-primary/25">{n}</span>
-                <h3 className="mt-2 text-2xl">{t}</h3>
+                <div className="flex items-center gap-4">
+                  <StepIcon kind={icon} />
+                  <span className="font-display text-5xl text-primary/25">{n}</span>
+                </div>
+                <h3 className="mt-4 text-2xl">{t}</h3>
                 <p className="mt-3 text-muted-foreground">{d}</p>
               </div>
             ))}
