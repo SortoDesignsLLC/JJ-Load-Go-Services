@@ -421,11 +421,12 @@ function Index() {
                 key={n}
                 className="relative flex h-full flex-col items-center rounded-lg border border-border bg-card p-8 text-center"
               >
-                <div className="flex h-20 items-center justify-center gap-4">
+                <span className="font-display text-5xl leading-none text-primary/25">{n}</span>
+                <div className="mt-4 flex h-14 items-center justify-center">
                   <StepIcon kind={icon} />
-                  <span className="font-display text-5xl leading-none text-primary/25">{n}</span>
                 </div>
                 <h3 className="mt-4 text-2xl">{t}</h3>
+
                 <p className="mt-3 text-muted-foreground">{d}</p>
               </div>
             ))}
