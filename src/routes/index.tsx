@@ -17,7 +17,33 @@ import {
   X,
   ArrowRight,
   Handshake,
+  MapPin,
 } from "lucide-react";
+import { lazy } from "react";
+import { ClientOnly } from "@tanstack/react-router";
+
+const ServiceAreaMap = lazy(() => import("@/components/ServiceAreaMap"));
+
+const serviceAreas = [
+  "Fairfax County",
+  "Loudoun County",
+  "Prince William County",
+  "Arlington",
+  "Alexandria",
+  "Manassas",
+  "Woodbridge",
+  "Centreville",
+  "Chantilly",
+  "Sterling",
+  "Ashburn",
+  "Herndon",
+  "Reston",
+  "Vienna",
+  "Springfield",
+  "Burke",
+  "Annandale",
+  "Dale City",
+];
 
 import logo from "@/assets/jj-logo.png.asset.json";
 import heroImg from "@/assets/hero.jpg";
