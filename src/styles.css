@@ -128,3 +128,19 @@
   }
 }
 
+
+@utility on-dark {
+  color: var(--steel);
+  & h1,
+  & h2,
+  & h3,
+  & .font-display {
+    color: oklch(1 0 0);
+  }
+}
+
+@utility logo-chip {
+  background: var(--ink);
+  border: 1px solid oklch(1 0 0 / 0.08);
+  border-radius: var(--radius);
+}
