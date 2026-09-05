@@ -41,7 +41,7 @@ export default function ServiceAreaMap() {
         color: "#16a34a",
         weight: 2,
         fillColor: "#86efac",
-        fillOpacity: 0.45,
+        fillOpacity: 0.18,
       }).addTo(map);
 
       map.fitBounds(area.getBounds(), { padding: [16, 16] });
