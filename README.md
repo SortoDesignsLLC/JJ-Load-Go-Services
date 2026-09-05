@@ -1,14 +1,20 @@
-# Welcome to your Lovable project
+# Clear Path Junk Removal
+
+Create a modern high converting webiste for A Junk Removal business. The design should be clean, premium, and mobile friendly, include a hero section, services section, testimonials, about section, services section and whatever you see it should need. Make it look professional and visually impressive. The goal is to convert visitors into customers.
+
+I will Attach the logo
+
+I will attach photos of another junk removal webiste that you can use as reference to create the this one.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f5e636d7-15a1-488b-a1e2-5ee1c3ab9621).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +26,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
