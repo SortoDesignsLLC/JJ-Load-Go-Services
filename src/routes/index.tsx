@@ -211,8 +211,7 @@ function Index() {
         />
         <div className="mx-auto max-w-7xl px-4 py-24 md:py-36 lg:px-8">
           <div className="on-dark max-w-2xl">
-            <p className="mb-4 inline-block border border-primary/60 bg-primary/25 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-white">
-
+            <p className="mb-4 inline-block border border-primary/60 bg-primary/25 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-steel">
               Reliable · Professional · Family Owned
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl">
@@ -227,9 +226,10 @@ function Index() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <CallButton />
               <a
-                href="#quote"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background/60 px-6 py-3.5 font-display text-lg tracking-wide transition hover:bg-secondary"
+                href="#pricing"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-steel/40 bg-ink/50 px-6 py-3.5 font-display text-lg tracking-wide text-steel transition hover:bg-ink/80"
               >
+
                 Get a free quote <ArrowRight className="h-5 w-5" />
               </a>
             </div>
