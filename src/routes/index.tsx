@@ -370,6 +370,11 @@ function Index() {
           style={{ background: "var(--gradient-hero)" }}
           aria-hidden="true"
         />
+        <div
+          className="absolute inset-0 -z-10 bg-ink/45 md:hidden"
+          aria-hidden="true"
+        />
+
         <div className="mx-auto max-w-7xl px-4 py-24 md:py-36 lg:px-8">
           <div className="on-dark max-w-2xl">
             <p className="mb-4 inline-block border border-primary bg-primary px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-primary-foreground shadow-md md:border-primary/60 md:bg-primary/25 md:text-steel md:shadow-none">
