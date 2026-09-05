@@ -47,8 +47,9 @@
   --color-ring: var(--ring);
   --color-steel: var(--steel);
   --color-ink: var(--ink);
-
+  --color-surface: var(--surface);
 }
+
 
 :root {
   --radius: 0.5rem;
