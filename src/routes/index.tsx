@@ -78,9 +78,24 @@ const services = [
 ];
 
 const steps = [
-  { n: "01", t: "Call or Text", d: "Tell us what you need gone. Photos help us quote faster." },
-  { n: "02", t: "Free Upfront Price", d: "We confirm the price on site before any work starts." },
-  { n: "03", t: "We Load & Go", d: "Crew loads everything, sweeps up and hauls it away same day." },
+  {
+    n: "01",
+    t: "Call or Text",
+    d: "Tell us what you need gone. Photos help us quote faster.",
+    icon: "phone" as const,
+  },
+  {
+    n: "02",
+    t: "Free Upfront Price",
+    d: "We confirm the price on site before any work starts.",
+    icon: "handshake" as const,
+  },
+  {
+    n: "03",
+    t: "We Load & Go",
+    d: "Crew loads everything, sweeps up and hauls it away same day.",
+    icon: "rig" as const,
+  },
 ];
 
 const testimonials = [
