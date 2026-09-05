@@ -372,9 +372,10 @@ function Index() {
         />
         <div className="mx-auto max-w-7xl px-4 py-24 md:py-36 lg:px-8">
           <div className="on-dark max-w-2xl">
-            <p className="mb-4 inline-block border border-primary/60 bg-primary/25 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-steel">
+            <p className="mb-4 inline-block border border-primary bg-primary px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-primary-foreground shadow-md md:border-primary/60 md:bg-primary/25 md:text-steel md:shadow-none">
               Reliable · Professional · Family Owned
             </p>
+
             <h1 className="text-5xl sm:text-6xl lg:text-7xl">
               Junk gone today.
               <span className="block text-primary">We haul it all.</span>
