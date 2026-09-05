@@ -210,8 +210,9 @@ function Index() {
           aria-hidden="true"
         />
         <div className="mx-auto max-w-7xl px-4 py-24 md:py-36 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="mb-4 inline-block border border-primary/60 bg-primary/15 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-foreground">
+          <div className="on-dark max-w-2xl">
+            <p className="mb-4 inline-block border border-primary/60 bg-primary/25 px-3 py-1.5 text-xs font-bold tracking-[0.22em] uppercase text-white">
+
               Reliable · Professional · Family Owned
             </p>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl">
