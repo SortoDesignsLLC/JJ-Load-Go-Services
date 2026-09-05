@@ -312,6 +312,89 @@ function Index() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section id="pricing" className="section-pad">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-4xl md:text-5xl">How pricing works</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              We price by how much space your stuff takes up in the trailer. You get a firm number
+              before we lift a finger — no hourly surprises, no hidden dump fees.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-10 text-center md:grid-cols-3">
+            {[
+              {
+                icon: Truck,
+                t: "Priced by the load",
+                d: "We quote on truck space, not the clock. An eighth, a quarter, a half or a full trailer — you only pay for the room your items take.",
+              },
+              {
+                icon: Sofa,
+                t: "What affects the cost",
+                d: "Item type, weight, and how hard it is to reach. Upstairs, tight basements, heavy materials and disposal fees can move the number.",
+              },
+              {
+                icon: CheckCircle2,
+                t: "Free, no-pressure quote",
+                d: "Text a photo for a ballpark, or we confirm the exact price on site. If it isn't right for you, we leave — no charge.",
+              },
+            ].map(({ icon: Icon, t, d }) => (
+              <div key={t} className="flex flex-col items-center">
+                <span className="grid h-16 w-16 place-items-center rounded-full bg-primary/10">
+                  <Icon className="h-8 w-8 text-primary" />
+                </span>
+                <h3 className="mt-5 text-2xl">{t}</h3>
+                <p className="mt-3 text-muted-foreground">{d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 overflow-hidden rounded-xl border border-border bg-surface shadow-[var(--shadow-lift)]">
+            <div className="border-b border-border px-6 py-5 text-center md:px-10">
+              <h3 className="text-2xl">Typical load sizes</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Ballpark ranges for the Northern Virginia area. Your exact price is confirmed on
+                site before work begins.
+              </p>
+            </div>
+            <div className="grid divide-y divide-border md:grid-cols-4 md:divide-x md:divide-y-0">
+              {[
+                { size: "1/8 Load", price: "$99 – $175", ex: "One appliance, a few boxes" },
+                { size: "1/4 Load", price: "$175 – $299", ex: "Couch or mattress set" },
+                { size: "1/2 Load", price: "$299 – $475", ex: "Garage or small basement" },
+                { size: "Full Load", price: "$475 – $699", ex: "Whole-home clean out" },
+              ].map((l, i) => (
+                <div key={l.size} className="bg-card p-7 text-center">
+                  <div
+                    className="mx-auto flex h-14 w-full max-w-[9rem] items-end overflow-hidden rounded border border-border"
+                    aria-hidden="true"
+                  >
+                    <span
+                      className="h-full"
+                      style={{
+                        width: `${[12.5, 25, 50, 100][i]}%`,
+                        background: "var(--gradient-red)",
+                      }}
+                    />
+                  </div>
+                  <p className="mt-4 font-display text-xl">{l.size}</p>
+                  <p className="mt-1 font-display text-2xl text-primary">{l.price}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{l.ex}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col items-center gap-3 border-t border-border px-6 py-7 text-center sm:flex-row sm:justify-center">
+              <p className="font-semibold">Not sure which size you need?</p>
+              <CallButton className="text-base" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* About */}
       <section id="about" className="section-pad">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
