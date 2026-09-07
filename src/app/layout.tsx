@@ -14,7 +14,7 @@ const shareImage = metadataBase ? {
   url: new URL("/social/jj-load-and-go-preview.jpg", metadataBase).toString(),
   width: 1200,
   height: 630,
-  alt: "JJ Load & Go Services — red pickup and hauling trailer. We haul it all.",
+  alt: "JJ Load & Go Services — junk removal and hauling in Northern Virginia, with a red pickup and hauling trailer.",
   type: "image/jpeg",
 } : undefined;
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   description,
   authors: [{ name: "JJ Load & Go Services" }],
   openGraph: {
-    title: "JJ Load & Go Services | We Haul It All",
+    title,
     description,
     siteName: "JJ Load & Go Services",
     type: "website",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JJ Load & Go Services | We Haul It All",
+    title,
     description,
     ...(shareImage ? { images: [shareImage] } : {}),
   },
