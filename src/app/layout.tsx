@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "../styles.css";
 
 const title = "JJ Load & Go Services | Junk Removal & Hauling in Northern Virginia";
-const description = "Fast, friendly junk removal, property clean outs, debris hauling and small demolition. Free upfront quotes, same-day pickup. Call 571-428-6909.";
+const description = "Friendly junk removal, property cleanouts, debris hauling, and small demolition across Northern Virginia. Free upfront quotes and same-day pickup. Call 571-428-6909.";
 // Set SITE_URL when a public domain is ready. Never guess a production origin.
 const configuredOrigin = process.env.SITE_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
